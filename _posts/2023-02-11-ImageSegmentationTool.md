@@ -1,5 +1,5 @@
 ---
-title: "ImageSegmentationTool"
+title: "Image-Segmentation-Tool"
 date: 2023-02-11
 ---
 Limitations of Image Segmentation with Modern Deep Learning Techniques
