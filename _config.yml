@@ -5,7 +5,7 @@ description: >-
   Welcome to my website where i share blogposts about everything i learn and find interesting.
 baseurl: "/NessimBenAbbes" # the subpath of your site, e.g. /blog
 url: "https://nessimbena.github.io/NessimBenAbbes/" 
-twitter_username: @NessimBenAbbes
+twitter_username: NessimBenAbbes
 github_username:  NessimBenA
 
 # Build settings
