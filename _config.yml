@@ -4,8 +4,8 @@ email: your-email@example.com
 description: >- 
   Welcome to my awesome website built with Jekyll and hosted on GitHub Pages.
   Here you'll find my thoughts on web development, design, and more.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" 
+baseurl: "/NessimBenAbbes" # the subpath of your site, e.g. /blog
+url: "https://nessimbena.github.io/NessimBenAbbes/" 
 twitter_username: yourtwitterhandle
 github_username:  yourgithubusername
 
