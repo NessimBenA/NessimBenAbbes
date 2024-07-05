@@ -1,11 +1,11 @@
 # Site settings
 title: My Awesome Website
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- 
   Welcome to my awesome website built with Jekyll and hosted on GitHub Pages.
   Here you'll find my thoughts on web development, design, and more.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # the base hostname & protocol for your site
+url: "https://yourusername.github.io" 
 twitter_username: yourtwitterhandle
 github_username:  yourgithubusername
 
@@ -16,20 +16,11 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-# Collections
-collections:
-  projects:
-    output: true
+# Navigation
+header_pages:
+  - about.md
+  - projects.md
+  - blog.md
 
 # Defaults
 defaults:
@@ -41,9 +32,9 @@ defaults:
       author: "Your Name"
   - scope:
       path: ""
-      type: "projects"
+      type: "pages"
     values:
-      layout: "project"
+      layout: "page"
   - scope:
       path: ""
     values:
