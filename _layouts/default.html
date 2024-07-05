@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .site-header { background-color: #3b82f6; }
+        .site-title { color: #ffffff; }
+        .nav-link { color: #e5e7eb; }
+        .nav-link:hover { color: #ffffff; text-decoration: underline; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <header class="site-header p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ site.baseurl }}/" class="site-title text-2xl font-bold">{{ site.title }}</a>
+            <nav>
+                {%- for path in site.header_pages -%}
+                    {%- assign my_page = site.pages | where: "path", path | first -%}
+                    {%- if my_page.title -%}
+                    <a class="nav-link ml-4" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                    {%- endif -%}
+                {%- endfor -%}
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto mt-8 px-4">
+        {{ content }}
+    </main>
+
+    <footer class="bg-gray-200 p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+            <div class="mt-2">
+                {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" class="text-gray-600 hover:text-gray-800 mx-2">GitHub</a>{% endif %}
+                {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" class="text-gray-600 hover:text-gray-800 mx-2">Twitter</a>{% endif %}
+                <a href="{{ site.baseurl }}/feed.xml" class="text-gray-600 hover:text-gray-800 mx-2">RSS</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
