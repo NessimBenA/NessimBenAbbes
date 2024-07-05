@@ -1,13 +1,12 @@
 # Site settings
-title: My Awesome Website
-email: your-email@example.com
+title: Nessim Ben Abbes
+email: abbesnessim at gmail
 description: >- 
-  Welcome to my awesome website built with Jekyll and hosted on GitHub Pages.
-  Here you'll find my thoughts on web development, design, and more.
+  Welcome to my website where i share blogposts about everything i learn and find interesting.
 baseurl: "/NessimBenAbbes" # the subpath of your site, e.g. /blog
 url: "https://nessimbena.github.io/NessimBenAbbes/" 
-twitter_username: yourtwitterhandle
-github_username:  yourgithubusername
+twitter_username: @NessimBenAbbes
+github_username:  NessimBenA
 
 # Build settings
 markdown: kramdown
