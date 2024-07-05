@@ -3,37 +3,33 @@ layout: default
 title: Home
 ---
 
-<div class="home">
-  <h1>Welcome to {{ site.title }}</h1>
-  
-  <p>{{ site.description }}</p>
+<div class="prose lg:prose-xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">Welcome to {{ site.title }}</h1>
+    
+    <p class="mb-8">{{ site.description }}</p>
 
-  <h2>Latest Posts</h2>
+    <h2 class="text-2xl font-semibold mb-4">Latest Posts</h2>
 
-  <ul class="post-list">
-    {% for post in site.posts limit:5 %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h3>
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
+    {% if site.posts.size > 0 %}
+        <ul class="space-y-4">
+            {% for post in site.posts limit:5 %}
+            <li class="bg-white shadow rounded-lg p-4">
+                <span class="text-sm text-gray-500">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <h3 class="text-xl font-semibold mt-1">
+                    <a href="{{ post.url | relative_url }}" class="text-blue-600 hover:text-blue-800">{{ post.title | escape }}</a>
+                </h3>
+                <p class="mt-2">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No posts yet. Check back soon!</p>
+    {% endif %}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Featured Project</h2>
 
-  <h2>Projects</h2>
-
-  <ul class="project-list">
-    {% for project in site.projects %}
-      <li>
-        <h3>
-          <a class="project-link" href="{{ project.url | relative_url }}">{{ project.title | escape }}</a>
-        </h3>
-        {{ project.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
+    <div class="bg-white shadow rounded-lg p-4">
+        <h3 class="text-xl font-semibold">{{ site.title }}</h3>
+        <p class="mt-2">This website is built with Jekyll and hosted on GitHub Pages. It showcases my work and thoughts on web development, design, and more.</p>
+    </div>
 </div>
